@@ -1,0 +1,104 @@
+.body {
+  width: 600px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 40px;  
+}
+
+.title {
+  font: 57px sans-serif;
+  margin-bottom: 4px;
+  text-align: center;
+  color: #2c4c6c;
+  font-weight: 500;
+}
+
+.subtitle {
+  text-align: center;
+  font: 24px sans-serif;
+  margin-top: 0px;
+  margin-bottom: 20px;
+  color: #2c4c6c;
+  font-weight: 500;
+}
+
+.introduction {
+  margin: 0 auto;
+  width: 500px; 
+  text-align: justify;
+  font: 18px sans-serif;
+  color: #8090a0;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+
+.manual {
+  margin-top: 50px;
+}
+
+.visualization
+{
+  margin: 0 auto;
+  width: 500px; 
+}
+
+
+.goal {
+  margin-bottom: 40px;
+}
+
+
+.goalHeader {
+  font: 22px sans-serif;
+  /*text-transform: uppercase;*/
+}
+
+.circle {
+  cursor: pointer
+}
+
+.impressum {
+  margin: 0 auto;
+  width: 500px;
+  text-align: center;
+  font: 12px sans-serif;
+  color: #8090a0;
+}
+
+/* configure bar plot */
+
+.details {
+  margin-top: 30px;
+}
+
+.axis {
+  font: 12px sans-serif;
+}
+
+.bar-title {
+  font: 12px sans-serif;
+  text-align: center;
+}
+
+.y-title {
+  font: 12px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+
+.y.axis path {
+  display: none;
+}
+

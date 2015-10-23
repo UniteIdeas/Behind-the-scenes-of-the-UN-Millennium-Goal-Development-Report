@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<head>
+  <link rel="stylesheet" type="text/css" href="un.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+  <script src="http://d3js.org/queue.v1.min.js"></script>
+
+  <script src="util.js"></script>
+  <script src="config.js"></script>
+  <script src="un.js"></script>
+</head>
+
+<body>
+
+<div class="body">
+    <div class="header">
+       <h1 class="title"> Behind the scenes</h1>
+       <h2 class="subtitle"> of the UN Millennium Goal Development Report</h2>   
+    </div>
+
+    <div class="introduction">
+
+       <p>
+       How much data is behind the MGD report? How many people does it represent?
+       </p>
+
+       <p>
+       Use this visualization to explore how much data has been collected about each of the millennium goals. Learn
+       how much of Earth's population is represented in each of data points collected. See for which goals the UN is making progress in collecting more
+       data in recent years.
+       </p>
+
+       <p>
+       This visualization can be a companion when reading the report or looking at other visualizations. Use it to investigate if results presented are grounded
+       on a sound basis of data.
+       </p>
+
+       <div class="manual">
+          <img src="manual.svg" title="Explanation of how to use this visualization"/>
+       </div>
+    </div>
+
+    <div class="visualization"> </div>
+
+    <div class="impressum"><a href="https://github.com/krasch/un">Sourcecode</a></div>
+
+</div>
+<script>
+
+// load the data
+queue()
+    .defer(d3.csv, 'data/aggregated.csv')
+    .defer(d3.csv, 'data/names.csv')  
+    .await(makeVisualization); 
+
+// keep track of which circle was selected
+var detailsSelected = "";
+
+// build the visualization, get's called when data has been loaded
+function makeVisualization(error, data, names) {
+
+   names = parseNames(names); 
+   
+   var viz = visualization(data, names);
+   viz.makeStructure();
+   viz.showCircles();
+}
+</script>
+</body>
+</html>
